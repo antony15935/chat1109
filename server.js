@@ -1,3 +1,5 @@
+const PORT = process.env.PORT||5000;
+
 const express = require("express");
 const app = express();
 const server = require("http").Server(app)
@@ -25,7 +27,7 @@ io.on("connect", (socket)=>{
 	});
 });
 
-server.listen(3000,()=>{
-	console.log("in 127.0.0.1:3000");	
+server.listen(PORT,()=>{
+	console.log("in 127.0.0.1");	
 });
 
