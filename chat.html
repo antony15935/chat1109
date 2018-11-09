@@ -13,11 +13,7 @@
         margin: 0;
     }
  
-	#game1 {
-		top: 100px;
-        width: 60px;
-		position: relative;
-	}
+	
 	
 	
     #container {
@@ -36,7 +32,7 @@
     #content {
         width: 100%;
         height: 350px;
-        border: 3px solid darkolivegreen;
+        border: 3px solid red;
         border-radius: 10px;
         overflow: auto;
     }
@@ -85,11 +81,6 @@
 	</style>
 </head>
 <body>
-	<div id="game1">
-		<form id="game">
-			<input type="submit" value="game">
-		</form>
-	</div>
 	
     <div id="container">
         <div id="status-box">Server: <span id="status">-</span> / <span id="online">0</span> online.</div>
@@ -112,7 +103,6 @@
             var online = document.getElementById("online");
 			var sendForm = document.getElementById("send-form");
 			var content = document.getElementById("content");
-			var gamestart = document.getElementById("game");
 			
             socket.on("connect", function () {
                 status.innerText = "Connected.";
@@ -156,11 +146,7 @@
 			});
 			
 			
-			gamestart.addEventListener("submit",(e)=>{
-				e.preventDefault();
-				socket.emit("gamestart");
-				window.location.assign("/game");
-			});
+			
 	
         });
     </script>
